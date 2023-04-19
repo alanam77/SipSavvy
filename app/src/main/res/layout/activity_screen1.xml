@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/google_pixel_7_pro__6_pro___1"
-    />
+    tools:context=".Screen1">
+
+</androidx.constraintlayout.widget.ConstraintLayout>
