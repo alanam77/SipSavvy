@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SipSavvy</string>
+
+    <string name="CheckUser">Please choose one of the following:</string>
 </resources>
