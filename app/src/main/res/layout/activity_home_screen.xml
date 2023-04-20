@@ -4,10 +4,89 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/blue"
+    android:gravity="center"
     tools:context=".HomeScreen">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"></LinearLayout>
+        android:backgroundTint="@color/blue"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/welcomeUser"
+            android:layout_width="match_parent"
+            android:layout_height="69dp"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <FrameLayout
+                android:layout_width="208dp"
+                android:layout_height="181dp">
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="Ideal Water Intake:"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="23sp" />
+
+                <TextView
+                    android:id="@+id/idealWaterIntake"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="TextView"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:translationY="25sp" />
+
+            </FrameLayout>
+
+            <FrameLayout
+                android:layout_width="201dp"
+                android:layout_height="181dp">
+
+                <TextView
+                    android:id="@+id/idealWaterIntake2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="TextView"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="25sp"
+                    android:translationY="25sp" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="198dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-smallcaps"
+                    android:text="Current Goal:"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="23sp" />
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="340dp"
+            android:translationY="0dp" />
+
+    </LinearLayout>
+
 </LinearLayout>
