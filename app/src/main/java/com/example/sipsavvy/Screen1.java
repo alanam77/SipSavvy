@@ -18,10 +18,12 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class Screen1 extends AppCompatActivity {
     FirebaseFirestore firestore;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_screen1);
         firestore = FirebaseFirestore.getInstance();
@@ -66,6 +68,5 @@ public class Screen1 extends AppCompatActivity {
                         }
                 });
         });
-
     }
 }
