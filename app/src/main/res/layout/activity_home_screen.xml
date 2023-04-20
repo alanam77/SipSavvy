@@ -85,7 +85,49 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="340dp"
-            android:translationY="0dp" />
+            android:translationY="0dp" >
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="@style/CircularDeterminateProgressBar"
+                android:layout_width="234dp"
+                android:layout_height="243dp"
+                android:translationX="85dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:progress="0" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="117dp"
+                android:layout_height="wrap_content"
+                android:translationY="275dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/customAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="+ oz" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:id="@+id/text_view_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="TextView"
+                android:translationX="175dp"
+                android:translationY="275dp" />
+
+            <Button
+                android:id="@+id/addEightOunces"
+                android:layout_width="103dp"
+                android:layout_height="60dp"
+                android:text="+8 oz"
+                android:translationX="300dp"
+                android:translationY="280dp" />
+
+        </FrameLayout>
 
     </LinearLayout>
 
