@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "161230140628",
+    "project_id": "sip-savvy",
+    "storage_bucket": "sip-savvy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:161230140628:android:808404afb1974b0f8cb741",
+        "android_client_info": {
+          "package_name": "com.example.sipsavvy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "161230140628-uidrjb2m30gv06f5kudbhsbgkp2gk35h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVS6VBVSuw094Z1u3MrnQgR-e1r378t_c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "161230140628-uidrjb2m30gv06f5kudbhsbgkp2gk35h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
