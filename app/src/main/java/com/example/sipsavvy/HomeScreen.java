@@ -16,13 +16,13 @@ public class HomeScreen extends AppCompatActivity {
         Intent mainIntent = getIntent();
 
         TextView welcomeUser = findViewById(R.id.welcomeUser);
-        String userName = mainIntent.getStringExtra("com.example.SipSavvy.userInput");
+        String userName = mainIntent.getStringExtra("com.example.SipSavvy.userName");
         welcomeUser.setText("Welcome, " + userName + "!");
 
 
         TextView idealWaterIntake = findViewById(R.id.idealWaterIntake);
-        String userWeight = mainIntent.getStringExtra("com.example.SipSavvy.userInput3");
-        int weightOfUser = Integer.valueOf(userWeight);
+        String userWeight = mainIntent.getStringExtra("com.example.SipSavvy.userWeight");
+        int weightOfUser = Integer.parseInt(userWeight);
         int waterIntake = weightOfUser / 2;
 
         idealWaterIntake.setText(waterIntake + "\nounces per day");

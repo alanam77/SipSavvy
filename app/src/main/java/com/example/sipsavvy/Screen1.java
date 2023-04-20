@@ -33,29 +33,29 @@ public class Screen1 extends AppCompatActivity {
         EditText userfeet = findViewById(R.id.UserFeet);
         EditText userinches = findViewById(R.id.UserInches);
         EditText userweight = findViewById(R.id.UserWeight);
-        String userName = username.getText().toString();
-        String userAge = age.getText().toString();
-        String userFeet = userfeet.getText().toString();
-        String userInches = userinches.getText().toString();
-        String userWeight = userweight.getText().toString();
-        Map<String, Object> userInfo = new HashMap<String, Object>();
-        userInfo.put("username", userName);
-        userInfo.put("age", userAge);
-        userInfo.put("ft", userFeet);
-        userInfo.put("in", userInches);
-        userInfo.put("weight", userWeight);
-        Intent intent = new Intent(Screen1.this, HomeScreen.class);
+        Intent intent = new Intent(this, HomeScreen.class);
 
         submitButton.setOnClickListener(v -> {
+            String userName = username.getText().toString();
+            String userAge = age.getText().toString();
+            String userFeet = userfeet.getText().toString();
+            String userInches = userinches.getText().toString();
+            String userWeight = userweight.getText().toString();
+            Map<String, Object> userInfo = new HashMap<String, Object>();
+            userInfo.put("username", userName);
+            userInfo.put("age", userAge);
+            userInfo.put("ft", userFeet);
+            userInfo.put("in", userInches);
+            userInfo.put("weight", userWeight);
                 firestore.collection("users").document("Current User").set(userInfo).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
                         Toast.makeText(getApplicationContext(), "Set User Success",Toast.LENGTH_LONG).show();
-                        intent.putExtra("userName", userName);
-                        intent.putExtra("feet", userFeet);
-                        intent.putExtra("inches",userInches);
-                        intent.putExtra("weight",userWeight);
-                        intent.putExtra("age", userAge);
+                        intent.putExtra("com.example.SipSavvy.userName", userName);
+                        intent.putExtra("com.example.SipSavvy.userFeet", userFeet);
+                        intent.putExtra("com.example.SipSavvy.userInches",userInches);
+                        intent.putExtra("com.example.SipSavvy.userWeight",userWeight);
+                        intent.putExtra("com.example.SipSavvy.userAge", userAge);
 //                        intent.putExtra("Wake Up", userWakeUp.getText().toString());
 //                        intent.putExtra("Sleep Time", userSleep.getText().toString());
                         startActivity(intent);

@@ -35,16 +35,16 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Successfully Retrieved User", Toast.LENGTH_LONG).show();
                 if (queryDocumentSnapshots.size() > 0) {
                     String userName = queryDocumentSnapshots.getDocuments().get(0).get("username").toString();
-                    int feet = Integer.parseInt(queryDocumentSnapshots.getDocuments().get(0).get("ft").toString());
-                    int inches = Integer.parseInt(queryDocumentSnapshots.getDocuments().get(0).get("in").toString());
-                    double weight = Double.parseDouble(queryDocumentSnapshots.getDocuments().get(0).get("weight").toString());
-                    int age = Integer.parseInt(queryDocumentSnapshots.getDocuments().get(0).get("age").toString());
+                    String feet = queryDocumentSnapshots.getDocuments().get(0).get("ft").toString();
+                    String inches = queryDocumentSnapshots.getDocuments().get(0).get("in").toString();
+                    String weight = queryDocumentSnapshots.getDocuments().get(0).get("weight").toString();
+                    String age = queryDocumentSnapshots.getDocuments().get(0).get("age").toString();
                     Intent intent = new Intent(MainActivity.this, HomeScreen.class);
-                    intent.putExtra("userName", userName);
-                    intent.putExtra("feet", feet);
-                    intent.putExtra("inches",inches);
-                    intent.putExtra("weight",weight);
-                    intent.putExtra("age", age);
+                    intent.putExtra("com.example.SipSavvy.userName", userName);
+                    intent.putExtra("com.example.SipSavvy.userFeet", feet);
+                    intent.putExtra("com.example.SipSavvy.userInches",inches);
+                    intent.putExtra("com.example.SipSavvy.userWeight",weight);
+                    intent.putExtra("com.example.SipSavvy.userAge", age);
                     new Handler().postDelayed(new Runnable() {
                         @Override
                         public void run() {
