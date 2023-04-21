@@ -5,13 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue"
-    android:gravity="right"
+    android:gravity="end"
     tools:context=".HomeScreen">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:backgroundTint="@color/blue"
         android:orientation="vertical">
 
         <TextView
@@ -83,12 +82,7 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-<<<<<<< HEAD
-            android:layout_height="match_parent"
-=======
-            android:layout_height="340dp"
->>>>>>> a59340c092051c462c2180576a905164f81fc6d4
-            android:translationY="0dp">
+            android:layout_height="413dp">
 
             <ProgressBar
                 android:id="@+id/progress_bar"
@@ -103,7 +97,7 @@
                 tools:progress="0" />
 
             <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="117dp"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:translationX="5dp"
                 android:translationY="350dp">
@@ -113,7 +107,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="+ oz"
-                    android:longClickable="false" />
+                    android:longClickable="false"
+                    android:translationY="-5dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -123,26 +118,33 @@
                 android:text="TextView"
                 android:textAlignment="center"
                 android:translationX="170dp"
-                android:translationY="275dp" />
+                android:translationY="225dp"
+                android:visibility="visible" />
 
             <Button
                 android:id="@+id/addEightOunces"
-                android:layout_width="103dp"
-                android:layout_height="60dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="#3F51B5"
+                android:backgroundTint="#3F51B5"
                 android:text="+8 oz"
+                android:textColor="@color/white"
                 android:translationX="280dp"
-                android:translationY="350dp" />
+                android:translationY="350dp"
+                android:visibility="visible" />
 
         </FrameLayout>
 
         <ImageButton
             android:id="@+id/settingsButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="103dp"
+            android:layout_height="59dp"
             android:layout_gravity="right"
             android:background="@color/blue"
+            android:contentDescription="Settings"
             android:translationX="-15dp"
-            android:translationY="80dp"
+            android:translationY="5dp"
+            android:visibility="visible"
             app:srcCompat="@drawable/settings_icon" />
 
     </LinearLayout>
