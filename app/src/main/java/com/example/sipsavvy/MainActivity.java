@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity {
                         public void run() {
                             Intent intent = new Intent(MainActivity.this, Screen1.class);
                             startActivity(intent);
+                            finish();
                         }
                     }, 3000);
                 }

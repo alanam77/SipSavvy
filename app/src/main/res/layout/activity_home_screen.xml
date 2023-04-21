@@ -108,7 +108,8 @@
                     android:id="@+id/customAmount"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="+ oz" />
+                    android:hint="+ oz"
+                    android:longClickable="false" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
