@@ -72,19 +72,15 @@ public class HomeScreen extends AppCompatActivity {
         Button addEightOunces = findViewById(R.id.addEightOunces);
         addEightOunces.setOnClickListener(v ->
         {
-            if(progress < finalGoal)
-            {
-
                 progress += 8;
                 Constants.CURRENT_INTAKE = progress;
                 updateProgressBar(progress);
-            }
-
-            else if(progress >= finalGoal)
-            {
-                updateProgressBar(progress);
-                textViewProgress.setText("You did it!");
-            }
+                if(progress >= finalGoal){
+                    textViewProgress.setText("You did it!");
+                }
+                else {
+                    textViewProgress.setText(progress + " Ounces!");
+                }
         });
 
         ImageButton settingsButton = findViewById(R.id.settingsButton);
@@ -104,7 +100,6 @@ public class HomeScreen extends AppCompatActivity {
     private void updateProgressBar(int val)
     {
         progressBar.setProgress(val,true);
-        textViewProgress.setText(val + " Ounces!");
     }
 
 
