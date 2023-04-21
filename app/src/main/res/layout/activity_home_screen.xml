@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/blue"
-    android:gravity="center"
+    android:gravity="right"
     tools:context=".HomeScreen">
 
     <LinearLayout
@@ -85,7 +85,7 @@
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="340dp"
-            android:translationY="0dp" >
+            android:translationY="0dp">
 
             <ProgressBar
                 android:id="@+id/progress_bar"
@@ -129,6 +129,16 @@
                 android:translationY="280dp" />
 
         </FrameLayout>
+
+        <ImageButton
+            android:id="@+id/settingsButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:background="@color/blue"
+            android:translationX="-15dp"
+            android:translationY="80dp"
+            app:srcCompat="@drawable/settings_icon" />
 
     </LinearLayout>
 

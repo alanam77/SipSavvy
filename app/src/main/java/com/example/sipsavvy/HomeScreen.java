@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.animation.TranslateAnimation;
 import android.view.inputmethod.EditorInfo;
 import android.widget.*;
 import android.widget.TextView;
@@ -68,18 +69,34 @@ public class HomeScreen extends AppCompatActivity {
         Button addEightOunces = findViewById(R.id.addEightOunces);
         addEightOunces.setOnClickListener(v ->
         {
-            if(progress <= finalGoal)
+            if(progress < finalGoal)
             {
-                progress += 8;
+                double percentage = finalGoal / 8.;
+                double percentage2 = 100. / percentage;
+                progress += percentage2;
                 updateProgressBar();
             }
 
-            if(progress >= finalGoal)
+            else if(progress >= finalGoal)
             {
                 updateProgressBar();
-                textViewProgress.setText("You did it! Congratulations!");
+
+                textViewProgress.setText("You did it!");
+
+                progressBar:progress = 100;
+
             }
         });
+
+        ImageButton settingsButton = findViewById(R.id.settingsButton);
+
+        Intent settingpage = new Intent(this, SettingPage.class);
+
+        settingsButton.setOnClickListener(v ->
+        {
+            startActivity(settingpage);
+        });
+
 
     }
 
