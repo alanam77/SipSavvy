@@ -12,10 +12,13 @@ import android.widget.TextView;
 
 public class HomeScreen extends AppCompatActivity {
 
-    private int progress = 0;
+
 
     private ProgressBar progressBar;
     private TextView textViewProgress;
+    private int progress = 0;
+    private int goal = 0;
+    private int finalGoal = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,37 +35,37 @@ public class HomeScreen extends AppCompatActivity {
         String userWeight = mainIntent.getStringExtra("com.example.SipSavvy.userWeight");
         int weightOfUser = Integer.parseInt(userWeight);
         int waterIntake = weightOfUser / 2;
+        Constants.IDEAL_INTAKE = waterIntake;
 
         idealWaterIntake.setText(waterIntake + "\nounces per day");
 
         TextView idealWaterIntake2 = findViewById(R.id.idealWaterIntake2);
-        int goal = (waterIntake * 20) / 100;
-        int finalGoal = waterIntake - goal;
-        idealWaterIntake2.setText(finalGoal + " ounces is your current goal!");
-
+        goal = (waterIntake * 20) / 100;
+        finalGoal = waterIntake - goal;
+        Constants.CURRENT_GOAL = finalGoal;
+        idealWaterIntake2.setText(finalGoal + " ounces!");
 
         //for progress bar
         progressBar = findViewById(R.id.progress_bar);
+        progressBar.setMin(0);
+        progressBar.setMax(finalGoal);
         textViewProgress = findViewById(R.id.text_view_progress);
-        progressBar.setProgress(0);
-        textViewProgress.setText("0%");
+        progressBar.setProgress(0,true);
+        textViewProgress.setText("0 Ounces!");
 
         EditText customAmount = findViewById(R.id.customAmount);
-      //  String amount = customAmount.getText().toString();
-      //  int intAmount = Integer.valueOf(amount);
-
 
         //fix this
-        customAmount.setOnEditorActionListener(
-                (arg0, actionId, event) -> {
-                    if (actionId == EditorInfo.IME_ACTION_DONE)
-                    {
-                        progress += 10;
-                        updateProgressBar();
-                    }
-                    return false;
-                });
-        //
+//        customAmount.setOnEditorActionListener(
+//                (arg0, actionId, event) -> {
+//                    if (actionId == EditorInfo.IME_ACTION_DONE)
+//                    {
+//                        progress += 10;
+//                        updateProgressBar(progress);
+//                    }
+//                    return false;
+//                })
+//
 
 
         Button addEightOunces = findViewById(R.id.addEightOunces);
@@ -71,12 +74,13 @@ public class HomeScreen extends AppCompatActivity {
             if(progress <= finalGoal)
             {
                 progress += 8;
-                updateProgressBar();
+                Constants.CURRENT_INTAKE = progress;
+                updateProgressBar(progress);
             }
 
             if(progress >= finalGoal)
             {
-                updateProgressBar();
+                updateProgressBar(progress);
                 textViewProgress.setText("You did it! Congratulations!");
             }
         });
@@ -85,10 +89,10 @@ public class HomeScreen extends AppCompatActivity {
 
 
 
-    private void updateProgressBar()
+    private void updateProgressBar(int val)
     {
-        progressBar.setProgress(progress);
-        textViewProgress.setText(progress + "%");
+        progressBar.setProgress(val,true);
+        textViewProgress.setText(val + " Ounces!");
     }
 
 
