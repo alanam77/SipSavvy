@@ -116,6 +116,8 @@ public class HomeScreen extends AppCompatActivity {
 
         settingsButton.setOnClickListener(v ->
         {
+            settingpage.putExtra("com.example.SipSavvy.userName", userName);
+            settingpage.putExtra("com.example.SipSavvy.userWeight",userWeight);
             startActivity(settingpage);
         });
 
