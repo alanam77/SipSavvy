@@ -23,7 +23,7 @@ public class HomeScreen extends AppCompatActivity {
 
     private ProgressBar progressBar;
     private TextView textViewProgress;
-    private int progress = 0;
+    private int progress = Constants.CURRENT_INTAKE;
     private int goal = 0;
     private int finalGoal = 0;
     @Override
@@ -58,8 +58,8 @@ public class HomeScreen extends AppCompatActivity {
         progressBar.setMin(0);
         progressBar.setMax(finalGoal);
         textViewProgress = findViewById(R.id.text_view_progress);
-        progressBar.setProgress(0,true);
-        textViewProgress.setText("0 Ounces!");
+        progressBar.setProgress(Constants.CURRENT_INTAKE,true);
+        textViewProgress.setText(progress +" Ounces!");
 
         EditText customAmount = findViewById(R.id.customAmount);
 
