@@ -117,45 +117,17 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Please enter the time you wake up:"
-            android:textSize="20sp" />
-
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/UserWakeUpLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter Time">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/UserWakeUp"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="hint" />
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <TextView
-            android:id="@+id/textView4"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Please enter the time you sleep:"
-            android:textSize="20sp" />
+            android:hint="Enter Time"/>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/UserSleepTimeLabel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter Time">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/UserSleepTime"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="hint" />
-        </com.google.android.material.textfield.TextInputLayout>
+            android:hint="Enter Time"/>
 
         <Button
             android:id="@+id/submitButton"
@@ -165,7 +137,8 @@
             android:fontFamily="sans-serif-smallcaps"
             android:text="submit"
             android:textAlignment="center"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:translationY="150dp" />
 
     </LinearLayout>
 </LinearLayout>

@@ -16,29 +16,33 @@
         <TextView
             android:id="@+id/textView6"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="75dp"
             android:fontFamily="sans-serif-smallcaps"
+            android:gravity="center"
             android:text="Edit User Information:"
             android:textAlignment="center"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:textColor="@color/black"
             android:textSize="30sp" />
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="76dp">
+            android:layout_height="wrap_content"
+            android:paddingVertical="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/textView8"
-                    android:layout_width="23dp"
+                    android:layout_width="16dp"
                     android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight=".5"
                     android:fontFamily="sans-serif-smallcaps"
+                    android:paddingHorizontal="7dp"
                     android:text="\nUsername:"
                     android:textColor="@color/black"
                     android:textSize="20sp" />
@@ -49,8 +53,9 @@
                     android:layout_weight="1">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/newUserName"
                         android:layout_width="match_parent"
-                        android:layout_height="70dp"
+                        android:layout_height="wrap_content"
                         android:hint="New Username" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
@@ -59,7 +64,8 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingVertical="0dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -68,10 +74,11 @@
 
                 <TextView
                     android:id="@+id/textView14"
-                    android:layout_width="266dp"
+                    android:layout_width="260dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-smallcaps"
+                    android:paddingHorizontal="7dp"
                     android:text="\nHeight:"
                     android:textAlignment="viewStart"
                     android:textColor="@color/black"
@@ -79,14 +86,28 @@
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_weight="1">
 
-                    <com.google.android.material.textfield.TextInputEditText
+                    <com.google.android.material.textfield.TextInputLayout
                         android:layout_width="match_parent"
-                        android:layout_height="76dp"
-                        android:hint="New Height"
-                        android:translationY="-1dp" />
+                        android:layout_height="78dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/newInches"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Inches"
+                            android:translationY="5dp" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/newFeet"
+                        android:layout_width="match_parent"
+                        android:layout_height="56dp"
+                        android:hint="Feet"
+                        android:translationY="1dp" />
+
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
         </FrameLayout>
@@ -97,15 +118,16 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="94dp"
+                android:layout_height="73dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/textView15"
-                    android:layout_width="268dp"
+                    android:layout_width="260dp"
                     android:layout_height="62dp"
                     android:layout_weight="1"
                     android:fontFamily="sans-serif-smallcaps"
+                    android:paddingHorizontal="7dp"
                     android:text="Weight:"
                     android:textColor="@color/black"
                     android:textSize="20sp"
@@ -117,13 +139,29 @@
                     android:layout_weight="1">
 
                     <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/newWeight"
                         android:layout_width="match_parent"
-                        android:layout_height="76dp"
+                        android:layout_height="wrap_content"
                         android:hint="New Weight"
                         android:translationY="0dp" />
                 </com.google.android.material.textfield.TextInputLayout>
             </LinearLayout>
         </FrameLayout>
+
+        <Button
+            android:id="@+id/submitButtonSettings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Submit"
+            android:translationX="155dp" />
+
+        <Button
+            android:id="@+id/clearButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Clear User Information"
+            android:translationY="240dp" />
 
     </LinearLayout>
 
