@@ -108,7 +108,7 @@
                     android:layout_height="wrap_content"
                     android:hint="+ oz"
                     android:longClickable="false"
-                    android:translationY="-5dp" />
+                    android:translationY="-10dp" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <TextView
@@ -146,6 +146,15 @@
             android:translationY="5dp"
             android:visibility="visible"
             app:srcCompat="@drawable/settings_icon" />
+
+        <Button
+            android:id="@+id/remindBtn"
+            android:layout_width="278dp"
+            android:layout_height="75dp"
+            android:text="Set 1hr Reminder"
+            android:textSize="16sp"
+            android:translationX="5dp"
+            android:translationY="-65dp" />
 
     </LinearLayout>
 

@@ -1,8 +1,14 @@
 package com.example.sipsavvy;
 
+
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlarmManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.View;
@@ -24,6 +30,7 @@ public class HomeScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_screen);
+        createNotificationChannel();
 
         Intent mainIntent = getIntent();
 
@@ -82,10 +89,30 @@ public class HomeScreen extends AppCompatActivity {
                     textViewProgress.setText(progress + " Ounces!");
                 }
         });
+        Button remindBtn = findViewById(R.id.remindBtn);
+        remindBtn.setOnClickListener(v -> {
+            Toast.makeText(this, "Reminder Set", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(HomeScreen.this, Reminder.class);
+            PendingIntent pendingIntent = PendingIntent.getBroadcast(HomeScreen.this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
+
+            AlarmManager alarmManager = (AlarmManager) getSystemService(ALARM_SERVICE);
+
+            long timeAtButtonClick = System.currentTimeMillis();
+
+            long tenSecsInMillis = 1000 * 10;
+
+            alarmManager.set(AlarmManager.RTC_WAKEUP,
+                    timeAtButtonClick + tenSecsInMillis,
+                    pendingIntent);
+
+        });
 
         ImageButton settingsButton = findViewById(R.id.settingsButton);
 
         Intent settingpage = new Intent(this, SettingPage.class);
+
+
+
 
         settingsButton.setOnClickListener(v ->
         {
@@ -100,6 +127,18 @@ public class HomeScreen extends AppCompatActivity {
     private void updateProgressBar(int val)
     {
         progressBar.setProgress(val,true);
+    }
+    private void createNotificationChannel(){
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "SipSavvy Reminder";
+            String description = "Channel for Drink Reminder";
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel("notifyDrink", name, importance);
+            channel.setDescription(description);
+
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
     }
 
 
