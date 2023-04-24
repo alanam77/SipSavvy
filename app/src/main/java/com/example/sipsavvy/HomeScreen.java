@@ -61,22 +61,8 @@ public class HomeScreen extends AppCompatActivity {
         progressBar.setProgress(Constants.CURRENT_INTAKE,true);
         textViewProgress.setText(progress +" Ounces!");
 
-        EditText customAmount = findViewById(R.id.customAmount);
-
-        //fix this
-//        customAmount.setOnEditorActionListener(
-//                (arg0, actionId, event) -> {
-//                    if (actionId == EditorInfo.IME_ACTION_DONE)
-//                    {
-//                        progress += 10;
-//                        updateProgressBar(progress);
-//                    }
-//                    return false;
-//                })
-//
-
-
         Button addEightOunces = findViewById(R.id.addEightOunces);
+
         addEightOunces.setOnClickListener(v ->
         {
                 progress += 8;
@@ -89,6 +75,7 @@ public class HomeScreen extends AppCompatActivity {
                     textViewProgress.setText(progress + " Ounces!");
                 }
         });
+
         Button remindBtn = findViewById(R.id.remindBtn);
         remindBtn.setOnClickListener(v -> {
             Toast.makeText(this, "Reminder Set", Toast.LENGTH_SHORT).show();
@@ -111,6 +98,29 @@ public class HomeScreen extends AppCompatActivity {
 
         Intent settingpage = new Intent(this, SettingPage.class);
 
+        Button customOz = findViewById(R.id.customOz);
+        EditText customAmount = findViewById(R.id.customAmount);
+
+        customOz.setOnClickListener(v ->
+        {
+
+            String customAmt = customAmount.getText().toString();
+
+            int customAmt2 = Integer.parseInt(customAmt);
+
+            progress += customAmt2;
+
+            Constants.CURRENT_INTAKE = progress;
+            updateProgressBar(progress);
+            if(progress >= finalGoal){
+                textViewProgress.setText("You did it!");
+            }
+            else {
+                textViewProgress.setText(progress + " Ounces!");
+            }
+
+
+        });
 
 
 
